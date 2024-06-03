@@ -51,7 +51,6 @@ strong_model:
     max_tokens: 4096
     temperature: 0.7
     top_p: 0.9
-    n: 1
 
 target_model:
   engine: openai
@@ -61,7 +60,6 @@ target_model:
     max_tokens: 4096
     temperature: 0.7
     top_p: 0.9
-    n: 1
 
 judge_model:
   engine: openai
@@ -71,7 +69,6 @@ judge_model:
     max_tokens: 512
     temperature: 0.0
     top_p: 1.0
-    n: 1
 
 pipeline:
   n_instructions: 2

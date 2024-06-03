@@ -5,7 +5,7 @@ from typing import List, Optional, Tuple
 
 from tqdm import tqdm
 
-from synth.pipelines import AbstractPipeline, CodecLLMPipeline
+from synth.pipelines import AbstractPipeline, CodecLMPipeline
 from synth.utils.dataset_utils import load_dataset
 from synth.utils.io_utils import load_yaml, save_results
 
@@ -30,7 +30,7 @@ def process_chunk(pipeline: AbstractPipeline,
 
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description="CodeCLLM pipeline")
+    parser = argparse.ArgumentParser(description="CodecLM pipeline")
     parser.add_argument("-c",
                         "--config_path",
                         type=str,
@@ -51,7 +51,7 @@ if __name__ == "__main__":
     config = load_yaml(config_path)
 
     # Initialize the pipeline
-    pipeline = CodecLLMPipeline(config)
+    pipeline = CodecLMPipeline(config)
 
     # Load the dataset
     dataset = load_dataset(config["pipeline"]["dataset_path"])

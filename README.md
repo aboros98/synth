@@ -8,7 +8,7 @@ ___
 
 ## **Table of contents**
 - [Usage](#usage)
-- [CodecLLM pipeline overview](#codecllm-pipeline-overview)
+- [CodecLM pipeline overview](#codeclm-pipeline-overview)
 - [Results](#results)
 - [Examples](#examples)
 - [Supported engines](#supported-engines)
@@ -87,11 +87,11 @@ python main.py -c <path_to_config_file> -p <number_of_parallel_processes>
 
 ___
 
-## **CodecLLM pipeline overview**
+## **CodecLM pipeline overview**
 
 <div align="center">
-  <img src="assets/pipeline.png" alt="CodecLLM Pipeline" width="800"/>
-  <p><em><a href="https://arxiv.org/pdf/2404.05875">Figure 1: Overview of the CodecLLM Pipeline</a></em></p>
+  <img src="assets/pipeline.png" alt="CodecLM Pipeline" width="800"/>
+  <p><em><a href="https://arxiv.org/pdf/2404.05875">Figure 1: Overview of the CodecLM Pipeline</a></em></p>
 </div>
 
 ### Pipeline steps
@@ -188,14 +188,14 @@ ___
 
 <div align="center">
   <img src="assets/diagram1.png" alt="Example 1" width="600"/>
-  <p>Figure 2. Example 1 - output from the CodecLLM pipeline</p>
+  <p>Figure 2. Example 1 - output from the CodecLM pipeline</p>
 </div>
 
 <br>
 
 <div align="center">
   <img src="assets/diagram2.png" alt="Example 2" width="600"/>
-  <p>Figure 3. Example 2 - output from the CodecLLM pipeline</p>
+  <p>Figure 3. Example 2 - output from the CodecLM pipeline</p>
 </div> 
 
 

@@ -55,10 +55,10 @@ class AbstractPipeline:
         raise NotImplementedError
 
 
-class CodecLLMPipeline(AbstractPipeline):
+class CodecLMPipeline(AbstractPipeline):
     def __init__(self, config: dict) -> None:
         """
-        Initialize the CodecLLM (https://arxiv.org/pdf/2404.05875) pipeline.
+        Initialize the CodecLM (https://arxiv.org/pdf/2404.05875) pipeline.
 
         Args:
             config (dict): The configuration for the pipeline.

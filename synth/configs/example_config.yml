@@ -1,0 +1,45 @@
+# Example configuration file for the Synth pipeline
+
+# Configuration for the strong model
+strong_model:
+  engine: # engine to use for the model
+  model: # model to use
+  seed: # seed for the model
+
+  generation_config:
+    max_tokens: # maximum number of tokens to generate
+    temperature: # temperature for sampling
+    top_p: # top p value for nucleus sampling
+
+# Configuration for the target model
+target_model:
+  engine:
+  model:
+  seed:
+
+  generation_config:
+    max_tokens:
+    temperature:
+    top_p:
+
+# Configuration for the judge model
+target_model:
+  engine:
+  model:
+  seed:
+
+  generation_config:
+    max_tokens:
+    temperature:
+    top_p:
+
+# Configuration for the pipeline
+pipeline:
+    n_instructions: # number of instructions to generate
+    n_rubrics: # number of rubrics to generate
+    n_iterations: # maximum number of tries for the contrastive loss
+    margin_threshold: # margin threshold for the contrastive loss
+    output_path: # path to save the generated instructions and rubrics
+    dataset_path: # this can be a local path or a hugginface dataset name
+
+

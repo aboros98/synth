@@ -1,0 +1,76 @@
+[
+    {
+        "instruction_index": 0,
+        "seed_instruction": "You are a helpful assistant, who always provide explanation. Think like you are answering to a five year old.\n\nAdd punctuation to the following sentence: Rear Admiral Kimmel CommanderinChief of the Pacific Fleet at the time says of another admirals belief that President Roosevelts plans required that no word be sent to alert the fleet in Hawaii that the individuals in high position in Washington who wilfully refrained from alerting our forces at Pearl Harbour should never be excused",
+        "task": "text editing",
+        "skills": "grammar, punctuation",
+        "rubrics": [
+            "The instruction requires the application of basic grammar rules, such as subject-verb agreement and tense consistency.",
+            "The instruction involves the use of punctuation marks, such as commas, semicolons, and colons, to clarify sentence structure.",
+            "The instruction demands the recognition and correction of common grammatical errors, such as dangling modifiers and parallel structure.",
+            "The instruction necessitates the application of advanced grammar and punctuation rules, such as the use of subjunctive mood and nuanced comma usage."
+        ],
+        "actions": [
+            "Add sentences with ambiguous verb tenses to the text, requiring the editor to identify and correct the errors.",
+            "Insert unnecessary or misplaced punctuation marks in the text, requiring the editor to identify and correct the errors.",
+            "Introduce sentences with grammatical errors, such as misplaced modifiers or inconsistent parallel structure, and require the editor to identify and correct the errors.",
+            "Provide a text with complex sentence structures, such as nested clauses or ambiguous relative pronouns, and require the editor to identify and correct the errors."
+        ],
+        "simple_instructions": [
+            "In the following sentence, insert a comma after the word \"however\" to ensure proper punctuation: \"I wanted to go to the store however I forgot my wallet.\"",
+            "Correct the grammatical error in the sentence \"The teacher gave the student's they're homework back.\" by replacing the incorrect word with the correct one.",
+            "Rearrange the words in the sentence \"Me and my friend went to the movies\" to ensure correct subject-verb agreement and grammatical order.",
+            "In the paragraph \"The new employee was very nervous on his first day of work. He was worried that he would make a mistake. He was also worried that he wouldn't make any friends.\", add a transitional phrase to connect the two sentences and improve the flow of the text."
+        ],
+        "strong_model": "meta-llama/Llama-3-70b-chat-hf",
+        "target_model": "meta-llama/Llama-3-8b-chat-hf",
+        "improved_instructions": [
+            {
+                "improvement_step": 3,
+                "original_instruction": "Identify and correct the grammatical errors in the following sentence: \"Having walked, to the store I realized; however, I had left, my wallet at home... but I went anyway, because I needed, milk and eggs badly?\"",
+                "rubric": "The instruction involves the use of punctuation marks, such as commas, semicolons, and colons, to clarify sentence structure.",
+                "action": "Insert unnecessary or misplaced punctuation marks in the text, requiring the editor to identify and correct the errors.",
+                "improved_instruction": "Identify and correct the grammatical errors in the following sentence: \"Having walked; to the store, I realized... however, I had left!! my wallet, at home... but I went anyway:, because I needed; milk, and eggs badly???\"",
+                "strong_answer": "What a sentence!\n\nHere are the grammatical errors I've identified:\n\n1. **Incorrect use of semicolons**: Semicolons (;) are used to separate two independent clauses that are closely related in meaning. In this sentence, they are used incorrectly to separate phrases or clauses that are not independent.\n2. **Lack of parallel structure**: The items in the list \"milk, and eggs badly\" are not parallel in structure. \"Badly\" is an adverb that doesn't belong with the nouns \"milk\" and \"eggs\".\n3. **Excessive use of punctuation**: The sentence has too many punctuation marks, which makes it hard to read and understand.\n4. **Inconsistent verb tense**: The sentence switches between past perfect (\"had left\") and simple past (\"realized\", \"went\") verb tenses.\n\nHere's the corrected sentence:\n\n\"After walking to the store, I realized I had left my wallet at home. However, I went anyway because I needed milk and eggs badly.\"\n\nOr, if you want to make it a single sentence:\n\n\"I walked to the store, realized I had left my wallet at home, and went anyway because I needed milk and eggs badly.\"\n\nLet me know if you have any questions about the corrections!",
+                "target_answer": "What a long sentence!\n\nHere are the grammatical errors I've identified:\n\n1. \"Having walked; to the store\" - The semicolon is not needed here. It's a dependent clause, so it should be followed by a comma.\n2. \"I realized... however, I had left!!\" - The double exclamation marks are unnecessary. Also, the comma after \"however\" is not needed.\n3. \"my wallet, at home\" - The comma is not needed here.\n4. \"but I went anyway:\" - The colon is not needed here. It's a sentence fragment.\n5. \"because I needed; milk, and eggs badly???\" - The semicolon is not needed here. It's a dependent clause, so it should be followed by a comma.\n\nHere's the corrected sentence:\n\nHaving walked to the store, I realized I had left my wallet at home. However, I went anyway because I needed milk and eggs badly.\n\nI removed the unnecessary punctuation and corrected the sentence structure to make it clearer and more readable.",
+                "strong_score": 9.0,
+                "target_score": 8.0,
+                "improvement_history": [
+                    {
+                        "improvement_step": 0,
+                        "original_instruction": "In the following sentence, insert a comma after the word \"however\" to ensure proper punctuation: \"I wanted to go to the store however I forgot my wallet.\"",
+                        "rubric": "The instruction involves the use of punctuation marks, such as commas, semicolons, and colons, to clarify sentence structure.",
+                        "action": "Insert unnecessary or misplaced punctuation marks in the text, requiring the editor to identify and correct the errors.",
+                        "improved_instruction": "In the following sentence, insert a comma after the word \"however;\" to ensure proper punctuation: \"I wanted to go to the store; however.. I forgot, my wallet!\"",
+                        "strong_answer": "The corrected sentence would be:\n\n\"I wanted to go to the store; however, I forgot my wallet!\"\n\nThe comma after \"however\" is necessary to separate the two independent clauses and provide a pause, making the sentence easier to read and understand.",
+                        "target_answer": "Here is the corrected sentence with a comma after the word \"however\":\n\n\"I wanted to go to the store; however, I forgot my wallet!\"\n\nThe comma after \"however\" helps to separate the two independent clauses and makes the sentence clearer and easier to read.",
+                        "strong_score": 9.0,
+                        "target_score": 9.0
+                    },
+                    {
+                        "improvement_step": 1,
+                        "original_instruction": "In the following sentence, insert a comma after the word \"however;\" to ensure proper punctuation: \"I wanted to go to the store; however.. I forgot, my wallet!\"",
+                        "rubric": "The instruction demands the recognition and correction of common grammatical errors, such as dangling modifiers and parallel structure.",
+                        "action": "Introduce sentences with grammatical errors, such as misplaced modifiers or inconsistent parallel structure, and require the editor to identify and correct the errors.",
+                        "improved_instruction": "Identify and correct the grammatical errors in the following sentence: \"Having walked to the store, I realized however I had left my wallet at home, but I went anyway because I needed milk and eggs badly.\"",
+                        "strong_answer": "The corrected sentence is:\n\n\"Having walked to the store, I realized that I had left my wallet at home; however, I went anyway because I needed milk and eggs badly.\"\n\nHere's a breakdown of the corrections:\n\n* \"however\" should be preceded by a semicolon (;) instead of a comma, as it's introducing a contrasting independent clause.\n* A conjunction (\"that\") is needed to introduce the subordinate clause \"I had left my wallet at home\".\n\nThe corrected sentence maintains the original meaning and flow, but with improved grammar and punctuation.",
+                        "target_answer": "The grammatical errors in the sentence are:\n\n1. A comma splice: The sentence starts with a dependent clause (\"Having walked to the store\") and then switches to an independent clause (\"I realized...\"). To correct this, we can use a conjunction to connect the two clauses, or separate them with a period and make them into two separate sentences.\n2. A lack of parallel structure: The sentence lists two things that the speaker needed (\"milk and eggs\"), but the verb \"needed\" is not repeated. To correct this, we can rephrase the sentence to make the structure parallel.\n\nHere is the corrected sentence:\n\n\"After walking to the store, I realized I had left my wallet at home. Despite this, I went anyway because I urgently needed milk and eggs.\"\n\nOr, alternatively:\n\n\"I had walked to the store, but I soon realized I had left my wallet at home. However, I decided to go anyway because I desperately needed milk and eggs.\"\n\nOr, in a more concise form:\n\n\"I walked to the store, only to realize I'd left my wallet at home. I went anyway, as I really needed milk and eggs.\"",
+                        "strong_score": 8.5,
+                        "target_score": 8.5
+                    },
+                    {
+                        "improvement_step": 2,
+                        "original_instruction": "Identify and correct the grammatical errors in the following sentence: \"Having walked to the store, I realized however I had left my wallet at home, but I went anyway because I needed milk and eggs badly.\"",
+                        "rubric": "The instruction involves the use of punctuation marks, such as commas, semicolons, and colons, to clarify sentence structure.",
+                        "action": "Insert unnecessary or misplaced punctuation marks in the text, requiring the editor to identify and correct the errors.",
+                        "improved_instruction": "Identify and correct the grammatical errors in the following sentence: \"Having walked, to the store I realized; however, I had left, my wallet at home... but I went anyway, because I needed, milk and eggs badly?\"",
+                        "strong_answer": "What a mouthful!\n\nHere's the corrected sentence:\n\n\"After walking to the store, I realized, however, that I had left my wallet at home; but I went anyway because I needed milk and eggs badly.\"\n\nLet's break down the errors and corrections:\n\n1. \"Having walked, to the store\" -> \"After walking to the store\" (correct use of a participial phrase)\n2. \"I realized; however\" -> \"I realized, however\" (comma splice; use a comma after \"realized\" to separate the two independent clauses)\n3. \"I had left, my wallet at home\" -> \"that I had left my wallet at home\" (correct use of a subordinate clause; no comma needed)\n4. \"but I went anyway, because\" -> \"but I went anyway because\" (no comma needed before \"because\")\n5. \"I needed, milk and eggs badly\" -> \"I needed milk and eggs badly\" (no comma needed between the verb \"needed\" and its objects)\n\nThe corrected sentence is now grammatically correct and easier to read!",
+                        "target_answer": "What a long sentence!\n\nHere are the grammatical errors I've identified:\n\n1. \"Having walked, to the store\" - The verb \"walked\" is a past participle, but it's not being used correctly. It should be \"Having walked to the store\" (with a comma after \"walked\").\n2. \"I realized; however, I had left\" - The semicolon (;) is not needed here. Instead, use a comma (,) to separate the two independent clauses.\n3. \"my wallet at home... but I went anyway\" - The ellipsis (...) is not necessary, and the sentence structure is a bit awkward. Consider rephrasing for better clarity.\n4. \"because I needed, milk and eggs badly\" - The comma (,) is unnecessary after \"needed\".\n\nHere's the corrected sentence:\n\n\"After walking to the store, I realized I had left my wallet at home. However, I went anyway because I needed milk and eggs badly.\"\n\nOr, if you'd like a more concise version:\n\n\"I walked to the store, only to discover I'd left my wallet at home. Despite this, I went anyway, as I really needed milk and eggs.\"",
+                        "strong_score": 8.5,
+                        "target_score": 8.5
+                    }
+                ]
+            }
+        ]
+    }
+]

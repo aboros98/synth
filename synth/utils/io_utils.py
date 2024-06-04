@@ -1,3 +1,4 @@
+import glob
 import json
 import os
 from typing import Dict, List, Union
@@ -104,10 +105,36 @@ def save_results(generated_dataset: Dict[str, str],
     save_json(os.path.join(output_path, "processed_data.json"), processed_data)
     save_json(os.path.join(output_path, "skipped_data.json"), skipped_data)
 
-    # Remove the temporary files
-    processed_data_temp_path = os.path.join(output_path, "_temp_processed_data.json")
-    skipped_data_temp_path = os.path.join(output_path, "_temp_skipped_data.json")
+    temp_files = [i for i in glob.glob(f"{output_path}/*.json") if "_temp" in i]
 
-    if os.path.exists(processed_data_temp_path):
-        os.remove(processed_data_temp_path)
-        os.remove(skipped_data_temp_path)
+    for temp_file in temp_files:
+        os.remove(temp_file)
+
+
+def aggregate_temp_files(output_path: str) -> None:
+    """
+    Aggregate the temp files into the processed data and skipped data.
+
+    Args:
+        output_path (str): the output path
+
+    Returns:
+        None
+    """
+    temp_files = [i for i in glob.glob(f"{output_path}/*.json") if "_temp" in i]
+
+    temp_processed_data = []
+    temp_skipped_data = []
+
+    for temp_file in temp_files:
+        data = load_json(temp_file)
+        if "processed_data" in temp_file:
+            temp_processed_data.extend(data)
+        elif "skipped_data" in temp_file:
+            temp_skipped_data.extend(temp_skipped_data)
+
+        os.remove(temp_file)
+
+    if len(temp_processed_data) > 0:
+        save_json(os.path.join(output_path, "_temp_processed_data.json"), temp_processed_data)
+        save_json(os.path.join(output_path, "_temp_skipped_data.json"), temp_skipped_data)

@@ -188,13 +188,15 @@ class CodecLMPipeline(AbstractPipeline):
 
     def run_pipeline(self,
                      dataset: List[str],
-                     progress_queue: Optional[Queue] = None) -> Tuple[List[Dict[str, str]], List[Dict[str, str]], List[int]]:
+                     progress_queue: Optional[Queue] = None,
+                     process_id: Optional[int] = None) -> Tuple[List[Dict[str, str]], List[Dict[str, str]], List[int]]:
         """
         Run the pipeline on the dataset.
 
         Args:
             dataset (List[str]): The dataset to run the pipeline on.
             progress_queue (Optional[Queue], optional): The queue to store the progress. Defaults to None.
+            process_id (Optional[int], optional): The process id. Defaults to None.
 
         Returns:
             Tuple[List[Dict[str, str]], List[Dict[str, str]], List[int]]: The improvement tree, the not processed data, and the processed data.
@@ -309,8 +311,12 @@ class CodecLMPipeline(AbstractPipeline):
             if progress_queue:
                 progress_queue.put(1)
 
-            save_json(os.path.join(self.pipeline_config["output_path"], "_temp_processed_data.json"), processed_data)
-            save_json(os.path.join(self.pipeline_config["output_path"], "_temp_skipped_data.json"), not_processed_data)
+            process_id = process_id if process_id is not None else "0"
+            temp_processed_filename = f"_temp_processed_data_{process_id}.json"
+            temp_skipped_filename = f"_temp_skipped_data_{process_id}.json"
+
+            save_json(os.path.join(self.pipeline_config["output_path"], temp_processed_filename), processed_data)
+            save_json(os.path.join(self.pipeline_config["output_path"], temp_skipped_filename), not_processed_data)
 
         generated_dataset = build_final_dataset(processed_data,
                                                 judge_model_name=self.judge_model_name,
